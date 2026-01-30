@@ -14,9 +14,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to Astro
+    - name: Deploy to Astro SaaS Sandbox
       uses: astronomer/deploy-action@v0.11.0
       with:
-        deployment-id: cmhthc6j913m001me8oywvmqq
+        deployment-id: ${{ secrets.ASTRO_SANDBOX_DEPLOYMENT_ID }}
         deploy-type: image-and-dags
-        image-name:  astrocrpublic.azurecr.io/runtime:3.1-4
+        image-name: ghcr.io/northerntrust-internal/apm0005301-ncw-airflow/ncw/ncw-sandbox:sandbox-latest
