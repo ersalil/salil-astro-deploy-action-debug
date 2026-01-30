@@ -19,4 +19,4 @@ jobs:
       with:
         deployment-id: cml0nvlw30ncp01m4i3qpjk5z
         deploy-type: image-and-dags
-        image-name: ersalil/salilagent:latest
+        image-name: astrocrpublic.azurecr.io/runtime:3.1-4
