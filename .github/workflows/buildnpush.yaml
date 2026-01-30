@@ -14,10 +14,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to Astro SaaS Sandbox
-      uses: astronomer/deploy-action@v0.11.0
-      with:
-        deployment-id: ${{ secrets.ASTRO_SANDBOX_DEPLOYMENT_ID }}
-        deploy-type: image
-        image-name: astrocrpublic.azurecr.io/runtime:3.1-4
-        cli-version: 1.36.0
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+        # 🔑 IMPORTANT: ensure the image exists locally
+      - name: Pull Docker image
+        run: |
+          docker pull astrocrpublic.azurecr.io/runtime:3.1-4
+
+      - name: Deploy to Astro SaaS Sandbox
+        uses: astronomer/deploy-action@v0.11.0
+        with:
+          deployment-id: ${{ secrets.ASTRO_SANDBOX_DEPLOYMENT_ID }}
+          deploy-type: image-and-dags
+          image-name: astrocrpublic.azurecr.io/runtime:3.1-4
+          cli-version: 1.36.0
