@@ -19,4 +19,4 @@ jobs:
       with:
         deployment-id: ${{ secrets.ASTRO_SANDBOX_DEPLOYMENT_ID }}
         deploy-type: image-and-dags
-        image-name: ghcr.io/northerntrust-internal/apm0005301-ncw-airflow/ncw/ncw-sandbox:sandbox-latest
+        image-name: astrocrpublic.azurecr.io/runtime:3.1-4
