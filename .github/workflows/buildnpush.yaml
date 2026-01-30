@@ -20,3 +20,4 @@ jobs:
         deployment-id: ${{ secrets.ASTRO_SANDBOX_DEPLOYMENT_ID }}
         deploy-type: image-and-dags
         image-name: astrocrpublic.azurecr.io/runtime:3.1-4
+        cli-version: 1.36.0
