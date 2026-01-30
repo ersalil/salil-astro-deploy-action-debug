@@ -26,6 +26,6 @@ jobs:
         uses: astronomer/deploy-action@v0.11.0
         with:
           deployment-id: ${{ secrets.ASTRO_SANDBOX_DEPLOYMENT_ID }}
-          deploy-type: image-and-dags
+          deploy-type: infer
           image-name: astrocrpublic.azurecr.io/runtime:3.1-4
           cli-version: 1.36.0
